@@ -7,6 +7,7 @@ import 'package:hhhhhhhh/auth%20feature/presenetaion/widgets/auth%20row%20items.
 import 'package:hhhhhhhh/auth%20feature/presenetaion/widgets/auth%20text%20form%20field%20section.dart';
 import 'package:hhhhhhhh/auth%20feature/presenetaion/widgets/positions%20enum.dart';
 import 'package:hhhhhhhh/core/styles/text%20styles.dart';
+import 'package:hhhhhhhh/core/widgets/custom%20button.dart';
 
 import '../widgets/auth text form field.dart';
 
@@ -36,8 +37,10 @@ class AuthPage extends StatelessWidget {
                 ],
               ),
                 ///AuthLogInTextFieldSection(),
-                  
+                  SizedBox(height: 50),
                   (state is LoginState)? const AuthLogInTextFieldSection():const AuthSignUpTextFieldSection(),
+                  SizedBox(height: 50),
+                  CustomButton(isLogin: (state is LoginState)? true:false,),
                 
             ],
           ),

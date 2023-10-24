@@ -17,7 +17,7 @@ abstract class TextStyles {
   static const style15Bold = TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.bold,
-    color: StyleColor.extraDarkColor,
+    color: StyleColor.whiteColor,
   );
   static const style15Medium = TextStyle(
     fontSize: 15,
@@ -38,7 +38,7 @@ abstract class TextStyles {
   static const style12Bold = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.bold,
-    color: StyleColor.extraDarkColor,
+    color: StyleColor.whiteColor,
   );
   static const style12Medium = TextStyle(
     fontSize: 12,
