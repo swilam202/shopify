@@ -1,5 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hhhhhhhh/auth%20feature/presenetaion/controller/auth%20cubit.dart';
+import 'package:hhhhhhhh/auth%20feature/presenetaion/controller/auth%20state.dart';
+import 'package:hhhhhhhh/auth%20feature/presenetaion/widgets/auth%20row%20items.dart';
+import 'package:hhhhhhhh/auth%20feature/presenetaion/widgets/auth%20text%20form%20field%20section.dart';
 import 'package:hhhhhhhh/auth%20feature/presenetaion/widgets/positions%20enum.dart';
 import 'package:hhhhhhhh/core/styles/text%20styles.dart';
 
@@ -10,44 +15,36 @@ class AuthPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.only(top: 50),
-              child: Row(
-
+        child: BlocBuilder<AuthCubit, AuthState>(
+          builder: (context, state) {
+            return Padding(
+          padding: EdgeInsets.only(top: 50),
+          child: Column(
+            children: [
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text('Log in',style: TextStyles.style30Bold,),
-                  Text('Sign up',style: TextStyles.style30Bold,),
-                  
+                  GestureDetector(
+                    onTap: ()=>BlocProvider.of<AuthCubit>(context).switchAuthMode(isLogin: true),
+                    child: LoginRowItem(isLogin: (state is LoginState)? true:false,)
+                  ),
+                  GestureDetector(
+                    onTap: ()=>BlocProvider.of<AuthCubit>(context).switchAuthMode(isLogin: false),
+                    child: SignupRowItem(isLogin: (state is SignupState)? true:false,),),
                 ],
               ),
-            ),
-            AuthTextFormField(
-              icon: CupertinoIcons.envelope,
-              placeholder: 'Email',
-              position: Positions.top,
-
-            ),
-            AuthTextFormField(
-              icon: CupertinoIcons.envelope,
-              placeholder: 'Email',
-              position: Positions.center,
-
-            ),
-            AuthTextFormField(
-              icon: CupertinoIcons.envelope,
-              placeholder: 'Email',
-              position: Positions.buttom,
-
-            ),
-          ],
+                ///AuthLogInTextFieldSection(),
+                  
+                  (state is LoginState)? const AuthLogInTextFieldSection():const AuthSignUpTextFieldSection(),
+                
+            ],
+          ),
+        );
+          },
         ),
       ),
-      );
-
+    );
   }
 }

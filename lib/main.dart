@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hhhhhhhh/auth%20feature/presenetaion/controller/auth%20cubit.dart';
 import 'package:hhhhhhhh/auth%20feature/presenetaion/pages/auth%20page.dart';
 
 void main() {
@@ -10,8 +12,13 @@ class Shopify extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: AuthPage(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => AuthCubit()),
+      ],
+      child: const MaterialApp(
+        home: AuthPage(),
+      ),
     );
   }
 }
