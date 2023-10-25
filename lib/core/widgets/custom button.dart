@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hhhhhhhh/core/styles/style%20colors.dart';
 import 'package:hhhhhhhh/core/styles/text%20styles.dart';
@@ -22,13 +25,21 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         padding: MaterialStateProperty.all(
-          const EdgeInsets.symmetric(vertical: 20, horizontal: 150),
+          const EdgeInsets.only(top: 12,bottom: 12,left: 60,right: 20 ),
         ),
       ),
       onPressed: (){},
-      child: Text(
-        isLogin ? 'Log in':'Sign up',
-        style: TextStyles.style15Bold,
+      
+      child: Row(
+
+        children: [
+          Text(
+            isLogin ? 'Log in':'Sign up',
+            style: TextStyles.style15Bold,
+          ),
+          const Spacer(),
+          const CircleAvatar(backgroundColor: StyleColor.whiteColor,child: Icon(Icons.arrow_forward_ios_outlined,color: StyleColor.orangeColor,))
+        ],
       ),
     );
   }

@@ -29,9 +29,14 @@ class AuthTextFormField extends StatelessWidget {
       ),
       cursorColor: StyleColor.orangeColor,
       decoration: BoxDecoration(
-        color: StyleColor.whiteColor,
-        borderRadius: getRadius(position),
-      ),
+          color: StyleColor.whiteColor,
+          borderRadius: getRadius(position),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              offset: const Offset(5, 5),
+            ),
+          ]),
     );
   }
 }

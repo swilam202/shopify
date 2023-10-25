@@ -8,27 +8,26 @@ class AuthSignUpTextFieldSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(12.0),
-      child: Column(
-        children: [
-          AuthTextFormField(
-            icon: CupertinoIcons.envelope,
-            placeholder: 'Email',
-            position: Positions.top,
-          ),
-          AuthTextFormField(
-            icon: CupertinoIcons.person,
-            placeholder: 'Username',
-            position: Positions.center,
-          ),
-          AuthTextFormField(
-            icon: CupertinoIcons.lock,
-            placeholder: 'Password',
-            position: Positions.buttom,
-          ),
-        ],
-      ),
+    return const Column(
+      children: [
+        AuthTextFormField(
+          icon: CupertinoIcons.envelope,
+          placeholder: 'Email',
+          position: Positions.top,
+        ),
+        AuthTextFormField(
+          icon: CupertinoIcons.person,
+          placeholder: 'Username',
+          position: Positions.center,
+        ),
+        AuthTextFormField(
+          icon: CupertinoIcons.lock,
+          placeholder: 'Password',
+          position: Positions.buttom,
+        ),
+        
+        
+      ],
     );
   }
 }
@@ -38,22 +37,19 @@ class AuthLogInTextFieldSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(12.0),
-      child: Column(
-        children: [
-          AuthTextFormField(
-            icon: CupertinoIcons.envelope,
-            placeholder: 'Email',
-            position: Positions.top,
-          ),
-          AuthTextFormField(
-            icon: CupertinoIcons.lock,
-            placeholder: 'Password',
-            position: Positions.buttom,
-          ),
-        ],
-      ),
+    return const Column(
+      children: [
+        AuthTextFormField(
+          icon: CupertinoIcons.envelope,
+          placeholder: 'Email',
+          position: Positions.top,
+        ),
+        AuthTextFormField(
+          icon: CupertinoIcons.lock,
+          placeholder: 'Password',
+          position: Positions.buttom,
+        ),
+      ],
     );
   }
 }
