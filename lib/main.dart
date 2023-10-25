@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hhhhhhhh/auth%20feature/presenetaion/controller/auth%20cubit.dart';
 import 'package:hhhhhhhh/auth%20feature/presenetaion/pages/auth%20page.dart';
 
-import 'home feature/presentation/pages/home page.dart';
+import 'home feature/presentation/pages/base page.dart';
 
 void main() {
   runApp(const Shopify());
@@ -19,7 +19,7 @@ class Shopify extends StatelessWidget {
         BlocProvider(create: (context) => AuthCubit()),
       ],
       child: const MaterialApp(
-        home: HomePage(),
+        home: BasePage(),
       ),
     );
   }
