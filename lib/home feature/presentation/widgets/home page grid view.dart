@@ -32,7 +32,7 @@ class HomePageDataGridView extends StatelessWidget {
                   blurRadius: 0.5,
                   offset: const Offset(5, 5),
                 ),
-              ]),
+              ],),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
