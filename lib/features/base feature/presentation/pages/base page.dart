@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hhhhhhhh/core/styles/style%20colors.dart';
-import 'package:hhhhhhhh/home%20feature/presentation/pages/home%20page.dart';
+import 'package:hhhhhhhh/base%20feature/presentation/pages/home%20page.dart';
 
-import '../../../core/styles/text styles.dart';
-import 'cart page.dart';
-import 'search page.dart';
+import '../../../cart feature/presentation/pages/cart page.dart';
+
+
 
 class BasePage extends StatefulWidget {
   const BasePage({super.key});

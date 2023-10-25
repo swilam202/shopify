@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/styles/text styles.dart';
-import '../../../core/widgets/custom button.dart';
+import '../../../../core/styles/text styles.dart';
+import '../../../../core/widgets/custom button.dart';
+
 
 
 class CartBottomSection extends StatelessWidget {

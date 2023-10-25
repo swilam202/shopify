@@ -1,11 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hhhhhhhh/core/styles/style%20colors.dart';
 import 'package:hhhhhhhh/core/widgets/custom%20button.dart';
 
-import '../../../core/styles/text styles.dart';
+import '../../../../core/styles/text styles.dart';
 import '../widgets/cart bottom section.dart';
 import '../widgets/cart listview.dart';
+
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hhhhhhhh/auth%20feature/presenetaion/controller/auth%20cubit.dart';
-import 'package:hhhhhhhh/auth%20feature/presenetaion/pages/auth%20page.dart';
 
-import 'home feature/presentation/pages/base page.dart';
+import 'features/auth feature/presenetaion/controller/auth cubit.dart';
+import 'features/base feature/presentation/pages/base page.dart';
 
 void main() {
   runApp(const Shopify());

@@ -1,16 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hhhhhhhh/auth%20feature/presenetaion/controller/auth%20cubit.dart';
-import 'package:hhhhhhhh/auth%20feature/presenetaion/controller/auth%20state.dart';
-import 'package:hhhhhhhh/auth%20feature/presenetaion/widgets/auth%20row%20items.dart';
-import 'package:hhhhhhhh/auth%20feature/presenetaion/widgets/auth%20row.dart';
-import 'package:hhhhhhhh/auth%20feature/presenetaion/widgets/auth%20text%20form%20field%20section.dart';
-import 'package:hhhhhhhh/auth%20feature/presenetaion/widgets/positions%20enum.dart';
+
 import 'package:hhhhhhhh/core/styles/style%20colors.dart';
 import 'package:hhhhhhhh/core/styles/text%20styles.dart';
 import 'package:hhhhhhhh/core/widgets/custom%20button.dart';
 
+import '../controller/auth cubit.dart';
+import '../controller/auth state.dart';
+import '../widgets/auth row.dart';
+import '../widgets/auth text form field section.dart';
 import '../widgets/auth text form field.dart';
 
 class AuthPage extends StatelessWidget {

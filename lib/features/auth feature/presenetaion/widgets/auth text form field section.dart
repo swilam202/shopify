@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hhhhhhhh/auth%20feature/presenetaion/widgets/auth%20text%20form%20field.dart';
-import 'package:hhhhhhhh/auth%20feature/presenetaion/widgets/positions%20enum.dart';
+import 'package:hhhhhhhh/features/auth%20feature/presenetaion/widgets/auth%20text%20form%20field.dart';
+
+import 'positions enum.dart';
+
 
 class AuthSignUpTextFieldSection extends StatelessWidget {
   const AuthSignUpTextFieldSection({super.key});

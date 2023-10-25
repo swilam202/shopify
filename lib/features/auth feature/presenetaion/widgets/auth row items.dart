@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/styles/text styles.dart';
+import '../../../../core/styles/text styles.dart';
+
+
 
 class LoginRowItem extends StatelessWidget {
   const LoginRowItem({

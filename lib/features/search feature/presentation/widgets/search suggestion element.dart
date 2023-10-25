@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/styles/style colors.dart';
-import '../../../core/styles/text styles.dart';
+import '../../../../core/styles/style colors.dart';
+import '../../../../core/styles/text styles.dart';
 
 class SearchSuggestionElement extends StatelessWidget {
   const SearchSuggestionElement({

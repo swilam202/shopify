@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/styles/style colors.dart';
-import '../../../core/styles/text styles.dart';
+import '../../../../core/styles/style colors.dart';
+import '../../../../core/styles/text styles.dart';
+
+
 
 
 class CartListViewItem extends StatelessWidget {

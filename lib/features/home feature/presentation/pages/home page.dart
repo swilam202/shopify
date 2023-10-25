@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/styles/text styles.dart';
+import '../../../../core/styles/text styles.dart';
 import '../widgets/custom home page appbar.dart';
 import '../widgets/home page categories listview.dart';
 import '../widgets/home page grid view.dart';

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hhhhhhhh/auth%20feature/presenetaion/controller/auth%20state.dart';
 
 import '../controller/auth cubit.dart';
+import '../controller/auth state.dart';
 import 'auth row items.dart';
 
 class AuthRow extends StatelessWidget {

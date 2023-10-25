@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hhhhhhhh/auth%20feature/presenetaion/widgets/positions%20enum.dart';
 import 'package:hhhhhhhh/core/styles/style%20colors.dart';
+
+import 'positions enum.dart';
 
 class AuthTextFormField extends StatelessWidget {
   const AuthTextFormField({
