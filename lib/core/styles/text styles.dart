@@ -59,6 +59,6 @@ abstract class TextStyles {
   static const style10Medium = TextStyle(
     fontSize: 10,
     fontWeight: FontWeight.w500,
-    color: StyleColor.whiteColor,
+    color: StyleColor.extraDarkColor,
   );
 }

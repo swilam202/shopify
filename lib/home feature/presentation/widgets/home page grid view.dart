@@ -48,7 +48,7 @@ class HomePageDataGridView extends StatelessWidget {
                 '\$49.99',
                 style: TextStyles.style10Medium.copyWith(
                   fontWeight: FontWeight.bold,
-                  color: StyleColor.extraDarkColor,
+                
                 ),
               ),
             ],

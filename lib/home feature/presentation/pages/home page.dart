@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
       child: ListView(
         physics: const BouncingScrollPhysics(),
         children: const [
-          HomePageCustomAppBar(),
+         // HomePageCustomAppBar(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 25, vertical: 13),
             child: Text(

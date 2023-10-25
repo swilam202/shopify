@@ -4,6 +4,7 @@ import 'package:hhhhhhhh/core/styles/style%20colors.dart';
 import 'package:hhhhhhhh/home%20feature/presentation/pages/home%20page.dart';
 
 import '../../../core/styles/text styles.dart';
+import 'cart page.dart';
 import 'search page.dart';
 
 class BasePage extends StatefulWidget {
@@ -19,7 +20,7 @@ class _BasePageState extends State<BasePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const SearchPage(),
+      body: const CartPage(),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
         onTap: (value) => setState(() {

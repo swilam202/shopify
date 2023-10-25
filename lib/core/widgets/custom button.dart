@@ -8,12 +8,12 @@ import 'package:hhhhhhhh/core/styles/text%20styles.dart';
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
-
-    required this.isLogin,
+    required this.text,
+     this.isLogin,
   });
 
-
-  final bool isLogin;
+  final String text;
+  final bool? isLogin;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -34,7 +34,7 @@ class CustomButton extends StatelessWidget {
 
         children: [
           Text(
-            isLogin ? 'Log in':'Sign up',
+            text,
             style: TextStyles.style15Bold,
           ),
           const Spacer(),

@@ -35,6 +35,7 @@ class AuthPage extends StatelessWidget {
                 const SizedBox(height: 50),
                 CustomButton(
                   isLogin: (state is LoginState) ? true : false,
+                  text: (state is LoginState) ? 'Log In' : 'Sign Up',
                 ),
                 const SizedBox(height: 30),
                 const Text(
