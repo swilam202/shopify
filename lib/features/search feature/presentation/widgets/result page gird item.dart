@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/styles/style colors.dart';
 import '../../../../core/styles/text styles.dart';
+import '../../../../core/widgets/rating container.dart';
 
 
 
@@ -28,9 +29,12 @@ class ResultPageGridItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
-                child: Image.asset(
-                  'assets/images/test1.png',
-                  fit: BoxFit.fill,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Image.asset(
+                    'assets/images/test1.png',
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
               const Padding(
@@ -40,36 +44,16 @@ class ResultPageGridItem extends StatelessWidget {
                   style: TextStyles.style15Light,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 4, bottom: 8, left: 10),
+              const Padding(
+                padding: EdgeInsets.only(top: 4, bottom: 8, left: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
+                    Text(
                       '\$49.99',
                       style: TextStyles.style12Bold,
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(4),
-                      margin: const EdgeInsets.only(right: 10),
-                      decoration: BoxDecoration(
-                        color: StyleColor.orangeColor,
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: const Row(
-                        children: [
-                          Icon(
-                            Icons.star,
-                            color: StyleColor.whiteColor,
-                            size: 10,
-                          ),
-                          Text(
-                            '4.9',
-                            style: TextStyles.style9Bold,
-                          ),
-                        ],
-                      ),
-                    ),
+                    RatingContainer(),
                   ],
                 ),
               ),

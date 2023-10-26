@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hhhhhhhh/core/styles/style%20colors.dart';
 
 import 'features/auth feature/presenetaion/controller/auth cubit.dart';
 import 'features/base feature/presentation/pages/base page.dart';
 import 'features/cart feature/presentation/pages/checkout page.dart';
+import 'features/details feature/presentation/pages/details page.dart';
 import 'features/search feature/presentation/pages/result page.dart';
 
 void main() {
@@ -19,8 +21,11 @@ class Shopify extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => AuthCubit()),
       ],
-      child: const MaterialApp(
-        home: ResultPage(),
+      child:  MaterialApp(
+        theme: ThemeData(
+          canvasColor: StyleColor.whiteColor,
+        ),
+        home: const DetailsPage(),
       ),
     );
   }

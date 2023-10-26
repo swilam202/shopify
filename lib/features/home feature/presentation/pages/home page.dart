@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hhhhhhhh/core/widgets/custom%20carousel%20slider.dart';
 
 import '../../../../core/styles/text styles.dart';
 import '../widgets/custom home page appbar.dart';
@@ -13,9 +14,9 @@ class HomePage extends StatelessWidget {
     return SafeArea(
       child: ListView(
         physics: const BouncingScrollPhysics(),
-        children: const [
-          SizedBox(height: 30),
-          Padding(
+        children: [
+          const SizedBox(height: 30),
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 25, vertical: 13),
             child: Text(
               'Cateories',
@@ -24,16 +25,24 @@ class HomePage extends StatelessWidget {
           ),
           SizedBox(
             height: 200,
-            child: HomePageCarouselSlider(),
+            child: CustomCarouselSlider(
+              items: List.generate(
+                10,
+                (index) => Container(
+                  margin: const EdgeInsets.all(12),
+                  color: Colors.primaries[index],
+                ),
+              ),
+            ),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 25, vertical: 13),
             child: Text(
               'Hot',
               style: TextStyles.style30Bold,
             ),
           ),
-          HomePageDataGridView(),
+          const HomePageDataGridView(),
         ],
       ),
     );

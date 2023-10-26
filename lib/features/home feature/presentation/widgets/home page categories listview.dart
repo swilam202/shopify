@@ -23,7 +23,7 @@ class HomePageCategoriesListView extends StatelessWidget {
     );
   }
 }
-
+/*
 class HomePageCarouselSlider extends StatelessWidget {
   const HomePageCarouselSlider({super.key});
 
@@ -48,4 +48,4 @@ class HomePageCarouselSlider extends StatelessWidget {
       ),
     );
   }
-}
+}*/
