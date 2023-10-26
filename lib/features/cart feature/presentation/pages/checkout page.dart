@@ -21,7 +21,7 @@ class CheckoutPage extends StatelessWidget {
             children: [
               SizedBox(height: 30),
               CheckoutUserDataSection(),
-              SizedBox(height: 18),
+              SizedBox(height: 20),
               CustomDivider(),
               SizedBox(height: 18),
               CheckoutPaymentSection(),
