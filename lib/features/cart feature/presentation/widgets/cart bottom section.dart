@@ -6,15 +6,16 @@ import '../../../../core/widgets/custom button.dart';
 
 
 class CartBottomSection extends StatelessWidget {
-  const CartBottomSection({super.key});
-
+  const CartBottomSection({super.key,required this.buttonText,});
+  final String buttonText;
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return  Padding(
+      
       padding: EdgeInsets.symmetric(vertical: 15),
       child: Row(
         children: [
-          Column(
+          const Column(
             children: [
               Text(
                 'TOTAL',
@@ -30,10 +31,10 @@ class CartBottomSection extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(width: 39),
+         const  SizedBox(width: 39),
           Expanded(
             child: CustomButton(
-              text: 'Checkout',
+              text: buttonText,
             ),
           ),
         ],

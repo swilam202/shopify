@@ -3,6 +3,7 @@ import 'package:hhhhhhhh/core/styles/style%20colors.dart';
 import 'package:hhhhhhhh/core/widgets/custom%20button.dart';
 
 import '../../../../core/styles/text styles.dart';
+import '../../../../core/widgets/custom divider.dart';
 import '../widgets/cart bottom section.dart';
 import '../widgets/cart listview.dart';
 
@@ -28,12 +29,8 @@ class CartPage extends StatelessWidget {
               child: CartListView(),
             ),
             SizedBox(height: 18),
-            Divider(
-              color: Colors.grey,
-              endIndent: 20,
-              indent: 20,
-            ),
-            CartBottomSection(),
+            CustomDivider(),
+            CartBottomSection(buttonText: 'Checkout',),
           ],
         ),
       ),

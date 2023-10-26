@@ -43,6 +43,7 @@ class HomePageCarouselSlider extends StatelessWidget {
         autoPlayAnimationDuration: const Duration(seconds: 1),
         autoPlayCurve: Curves.fastEaseInToSlowEaseOut,
         reverse: false,
+        enableInfiniteScroll: true,
         viewportFraction: 0.9,
       ),
     );
