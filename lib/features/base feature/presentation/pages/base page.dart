@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hhhhhhhh/core/styles/style%20colors.dart';
 
 import '../../../cart feature/presentation/pages/cart page.dart';
+import '../../../home feature/presentation/pages/home page.dart';
 
 
 
@@ -19,7 +20,7 @@ class _BasePageState extends State<BasePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const CartPage(),
+      body: const HomePage(),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
         onTap: (value) => setState(() {
@@ -33,7 +34,6 @@ class _BasePageState extends State<BasePage> {
           BottomNavigationBarItem(icon: Icon(Icons.search),label: 'Search'),
            BottomNavigationBarItem(icon: Icon(Icons.shopping_cart),label: 'Cart'),
           BottomNavigationBarItem(icon: Icon(Icons.person),label: 'Profile'),
-         
         ],
       ),
     );
