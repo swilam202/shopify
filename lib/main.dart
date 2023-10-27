@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hhhhhhhh/core/styles/style%20colors.dart';
+import 'package:hhhhhhhh/features/base%20feature/presentation/controller/base%20page%20cubit.dart';
+import 'package:hhhhhhhh/features/home%20feature/presentation/controller/home%20page%20cubit.dart';
 
 import 'features/auth feature/presenetaion/controller/auth cubit.dart';
 import 'features/base feature/presentation/pages/base page.dart';
 import 'features/cart feature/presentation/pages/checkout page.dart';
 import 'features/details feature/presentation/pages/details page.dart';
+import 'features/search feature/presentation/controller/search page cubit.dart';
 import 'features/search feature/presentation/pages/result page.dart';
 
 void main() {
@@ -20,12 +23,16 @@ class Shopify extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => AuthCubit()),
+        BlocProvider(create: (context) => BasePageCubit()..loadPages(context)),
+        //BlocProvider(create: (context) => HomePageCubit()),
+       // BlocProvider(create: (context) => SearchPageCubit()),
+
       ],
       child:  MaterialApp(
         theme: ThemeData(
           canvasColor: StyleColor.whiteColor,
         ),
-        home: const DetailsPage(),
+        home: const BasePage(),
       ),
     );
   }

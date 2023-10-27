@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hhhhhhhh/core/widgets/custom%20carousel%20slider.dart';
+import 'package:hhhhhhhh/features/base%20feature/presentation/controller/base%20page%20state.dart';
+import 'package:hhhhhhhh/features/home%20feature/presentation/controller/home%20page%20cubit.dart';
+import 'package:hhhhhhhh/features/home%20feature/presentation/controller/home%20page%20state.dart';
 
 import '../../../../core/styles/text styles.dart';
 import '../widgets/custom home page appbar.dart';
@@ -11,7 +15,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+               return SafeArea(
       child: ListView(
         physics: const BouncingScrollPhysics(),
         children: [
@@ -46,5 +50,6 @@ class HomePage extends StatelessWidget {
         ],
       ),
     );
-  }
+
+    }
 }
