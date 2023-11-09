@@ -24,8 +24,7 @@ class Shopify extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => AuthCubit()),
         BlocProvider(create: (context) => BasePageCubit()..loadPages(context)),
-        //BlocProvider(create: (context) => HomePageCubit()),
-       // BlocProvider(create: (context) => SearchPageCubit()),
+        
 
       ],
       child:  MaterialApp(
