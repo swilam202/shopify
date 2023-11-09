@@ -6,7 +6,7 @@ class RegisterData {
   final String token;
   final String image;
 
-  RegisterData({
+  const RegisterData({
     required this.id,
     required this.name,
     required this.phone,

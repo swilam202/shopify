@@ -5,7 +5,7 @@ class Login {
   final String message;
   final LoginData? data;
 
-  Login({
+  const Login({
     required this.status,
     required this.message,
     required this.data,

@@ -2,7 +2,7 @@ class Logout {
   final bool status;
   final String message;
 
-  Logout({
+  const Logout({
     required this.status,
     required this.message,
   });

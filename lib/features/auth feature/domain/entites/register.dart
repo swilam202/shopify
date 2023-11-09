@@ -5,7 +5,7 @@ class Register {
   final String message;
   final RegisterData data;
 
-  Register({
+  const Register({
     required this.status,
     required this.message,
     required this.data,

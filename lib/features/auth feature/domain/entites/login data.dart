@@ -5,7 +5,7 @@ class LoginData {
   final String phone;
   final String image;
 
-  LoginData({
+  const LoginData({
     required this.id,
     required this.name,
     required this.email,
