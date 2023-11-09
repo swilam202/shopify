@@ -1,9 +1,11 @@
 class ChangePassword {
-  final String currentPassword;
-  final String newPassword;
+  final bool status;
+  final String message;
 
   const ChangePassword({
-    required this.currentPassword,
-    required this.newPassword,
+    required this.status,
+    required this.message,
   });
 }
+
+

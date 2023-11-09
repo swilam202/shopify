@@ -4,6 +4,7 @@ class LoginData {
   final String email;
   final String phone;
   final String image;
+  final String token;
 
   const LoginData({
     required this.id,
@@ -11,5 +12,6 @@ class LoginData {
     required this.email,
     required this.phone,
     required this.image,
+    required this.token,
   });
 }
