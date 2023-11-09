@@ -8,7 +8,13 @@ class PostRegisterUsecase{
 
   PostRegisterUsecase(this.baseAuthRepository);
 
-  Future<Either<Exception,Register>> excute()async{
-    return await baseAuthRepository.postRegiter();
+  Future<Either<Exception,Register>> excute({
+    required String name,
+    required String phone,
+    required String email,
+    required String password,
+    required String image,
+  })async{
+    return await baseAuthRepository.postRegiter(name: name, phone: phone, email: email, password: password, image: image);
   }
 }

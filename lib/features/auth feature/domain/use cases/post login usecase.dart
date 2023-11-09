@@ -7,7 +7,10 @@ class PostLoginUsecase{
 
   PostLoginUsecase(this.baseAuthRepository);
 
-  Future<Either<Exception,Login>> excute()async{
-    return await baseAuthRepository.postLogin();
+  Future<Either<Exception,Login>> excute({
+    required String email,
+    required String password,
+  })async{
+    return await baseAuthRepository.postLogin(email: email, password: password);
   }
 }

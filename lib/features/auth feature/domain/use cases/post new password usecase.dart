@@ -9,7 +9,11 @@ class PostNewPasswordUsecase{
 
   PostNewPasswordUsecase(this.baseAuthRepository);
 
-  Future<Either<Exception,ChangePassword>> excute()async{
-    return await baseAuthRepository.postChangePassword();
+  Future<Either<Exception,ChangePassword>> excute({
+    required String currentPassword,
+    required String newPassword,
+    required String token,
+  })async{
+    return await baseAuthRepository.postChangePassword(currentPassword: currentPassword, newPassword: newPassword, token: token);
   }
 }

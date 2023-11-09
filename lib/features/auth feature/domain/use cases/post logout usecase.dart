@@ -8,7 +8,9 @@ class PostLogoutUsecase{
 
   PostLogoutUsecase(this.baseAuthRepository);
 
-  Future<Either<Exception,Logout>> excute()async{
-    return await baseAuthRepository.postLogout();
+  Future<Either<Exception,Logout>> excute({
+    required String token,
+  })async{
+    return await baseAuthRepository.postLogout(token: token);
   }
 }

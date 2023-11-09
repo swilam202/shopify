@@ -13,11 +13,14 @@ abstract class BaseAuthDataSource {
     required String email,
     required String password,
   });
-  Future<ChangePasswordModel> postChangePassword(
-      {required String currentPassword,
-      required String newPassword,
-      required String token});
-  Future<LogoutModel> postLogout({required String token});
+  Future<ChangePasswordModel> postChangePassword({
+    required String currentPassword,
+    required String newPassword,
+    required String token,
+  });
+  Future<LogoutModel> postLogout({
+    required String token,
+  });
   Future<RegisterModel> postRegister({
     required String name,
     required String phone,
