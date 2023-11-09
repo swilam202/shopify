@@ -8,21 +8,23 @@ class APIServices {
     'Content-Type': 'application/json',
   };
 
-  Future<Map<String, dynamic>> get(String url) async {
+  Future<http.Response> get({required String url}) async {
     Uri uri = Uri.parse(url);
     http.Response response = await http.get(uri, headers: headers);
-    Map<String, dynamic> data = jsonDecode(response.body);
+    return response;
+
+    /*Map<String, dynamic> data = jsonDecode(response.body);
     print(data);
-    return data;
+    return data;*/
   }
 
-  Future<Map<String, dynamic>> post(
-    String url,
-    Map<String, dynamic> body,
+  Future<http.Response> post({
+    required String url,
+    required Map<String, dynamic> body,
     String? token,
-  ) async {
+  }) async {
     if (token != null) {
-      headers.addAll({'token': token});
+      headers.addAll({'Authorization': token});
     }
     Uri uri = Uri.parse(url);
     http.Response response = await http.post(
@@ -30,8 +32,9 @@ class APIServices {
       body: body,
       headers: headers,
     );
-    Map<String, dynamic> data = jsonDecode(response.body);
+    return response;
+    /*Map<String, dynamic> data = jsonDecode(response.body);
     print(data);
-    return data;
+    return data;*/
   }
 }
