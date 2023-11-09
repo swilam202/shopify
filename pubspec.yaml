@@ -34,6 +34,8 @@ dependencies:
   carousel_slider: ^4.2.1
   shared_preferences: ^2.2.2
   dartz: ^0.10.1
+  get_it: ^7.6.4
+  fluttertoast: ^8.2.3
   flutter:
     sdk: flutter
 
