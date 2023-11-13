@@ -8,16 +8,16 @@ import 'auth state.dart';
 
 
 class AuthCubit extends Cubit<AuthState>{
-  AuthCubit():super(LoginState());
+  AuthCubit():super(AuthLoginState());
 
 
   void switchAuthMode({required bool isLogin}){
     if(isLogin){
-      emit(LoginState());
+      emit(AuthLoginState());
       
     }
     else{
-      emit(SignupState());
+      emit(AuthSignupState());
       
     }
   }

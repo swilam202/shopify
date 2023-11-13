@@ -40,7 +40,7 @@ class _AuthPageState extends State<AuthPage> {
                 const SizedBox(height: 50),
                 AuthRow(state),
                 const SizedBox(height: 50),
-                (state is LoginState)
+                (state is AuthLoginState)
                     ? const AuthLogInSection()
                     : const AuthSignUpSection(),
                 

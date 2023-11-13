@@ -12,12 +12,12 @@ class LoginCubit extends Cubit<LoginState>{
 
 
 
-   loginFunc({required String email,required String password,})async{
-    emit(LoginInitialState());
+   loginFunction({required String email,required String password,})async{
+    emit(LoginLoadingState());
     try{
       AuthDataSource authDataSource = AuthDataSource();
       Login a = await authDataSource.postLogin(email: email,password:  password,);
-        print(a);
+        print(a.message.toString());
         
       emit(LoginSuccessState());
     }

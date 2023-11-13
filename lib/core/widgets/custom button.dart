@@ -14,7 +14,7 @@ class CustomButton extends StatelessWidget {
   });
 
   final Widget widget;
-  final Function() onPressed;
+  final Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(

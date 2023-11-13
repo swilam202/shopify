@@ -19,13 +19,13 @@ class AuthRow extends StatelessWidget {
                         onTap: () => BlocProvider.of<AuthCubit>(context)
                             .switchAuthMode(isLogin: true),
                         child: LoginRowItem(
-                          isLogin: (state is LoginState) ? true : false,
+                          isLogin: (state is AuthLoginState) ? true : false,
                         ),),
                     GestureDetector(
                       onTap: () => BlocProvider.of<AuthCubit>(context)
                           .switchAuthMode(isLogin: false),
                       child: SignupRowItem(
-                        isLogin: (state is SignupState) ? true : false,
+                        isLogin: (state is AuthSignupState) ? true : false,
                       ),
                     ),
                   ],
