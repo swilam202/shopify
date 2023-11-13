@@ -107,7 +107,7 @@ class AuthDataSource extends BaseAuthDataSource {
     required String image,
   }) async {
     http.Response response = await apiServices.post(
-      url: '',
+      url: 'https://student.valuxapps.com/api/register',
       body: {
         "name": name,
         "phone": phone,

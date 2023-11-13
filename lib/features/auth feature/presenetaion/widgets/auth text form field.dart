@@ -11,15 +11,18 @@ class AuthTextFormField extends StatelessWidget {
     required this.placeholder,
     required this.position,
     this.controller,
+    this.type,
   });
 
   final String placeholder;
   final IconData icon;
   final Positions position;
   final TextEditingController? controller;
+  final TextInputType? type;
   @override
   Widget build(BuildContext context) {
     return CupertinoTextField(
+      keyboardType: type,
       controller: controller,
       placeholder: placeholder,
       padding: const EdgeInsets.all(25),

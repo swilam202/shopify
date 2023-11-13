@@ -1,6 +1,9 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hhhhhhhh/features/auth%20feature/presenetaion/controller/signup%20controller/signup%20cubit.dart';
+import 'package:hhhhhhhh/features/auth%20feature/presenetaion/controller/signup%20controller/signup%20state.dart';
 
 import '../../../../core/styles/style colors.dart';
 import '../../../../core/styles/text styles.dart';
@@ -13,31 +16,58 @@ class AuthSignUpSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+    final TextEditingController phoneController = TextEditingController();
+    final TextEditingController nameController = TextEditingController();
+            return  Column(
       children: [
-        const AuthTextFormField(
-          icon: CupertinoIcons.envelope,
-          placeholder: 'Email',
+         AuthTextFormField(
+          controller: nameController,
+          icon: CupertinoIcons.person,
+          placeholder: 'Name',
           position: Positions.top,
         ),
-        const AuthTextFormField(
-          icon: CupertinoIcons.person,
-          placeholder: 'Username',
+         AuthTextFormField(
+          controller: emailController,
+          icon: CupertinoIcons.envelope,
+          placeholder: 'Email',
           position: Positions.center,
+          type: TextInputType.emailAddress,
         ),
-        const AuthTextFormField(
+        
+         AuthTextFormField(
+          controller: phoneController,
+          icon: CupertinoIcons.phone,
+          placeholder: 'Phone',
+          position: Positions.center,
+          type: TextInputType.phone,
+        ),
+       
+         AuthTextFormField(
+          controller: passwordController,
           icon: CupertinoIcons.lock,
           placeholder: 'Password',
           position: Positions.buttom,
         ),
+        
         const SizedBox(height: 50),
-                CustomButton(
-                 widget: const Text('Signup'),
-                 onPressed: () async{
-                // await BlocProvider.of<AuthCubit>(context).loginFunc(email: 'mahmoudswilam02@gmail.com',password: '12345678',); 
-                 },
-                ),
-                const SizedBox(height: 30),
+        BlocBuilder<SignupCubit,SignupState>(
+          builder: (context, state) {
+             return  CustomButton(
+                 widget: (state is SignupLoadingState)? Center(
+                        child: CircularProgressIndicator(),
+                      )
+                    :  Text('Signup'),
+                 onPressed:(state is SignupLoadingState)
+                    ? null
+                    :  () async{
+                 await BlocProvider.of<SignupCubit>(context).signupFunction(email: emailController.text, password: passwordController.text, image: 'image', name: nameController.text, phone: phoneController.text,);
+                    },);
+              
+          },
+        ),
+               const SizedBox(height: 30),
                 const Text(
                   'By creating an account, you agree to our',
                   textAlign: TextAlign.center,
@@ -52,5 +82,7 @@ class AuthSignUpSection extends StatelessWidget {
         
       ],
     );
-  }
+ 
+  
+   }
 }
