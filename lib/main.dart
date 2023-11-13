@@ -5,7 +5,7 @@ import 'package:hhhhhhhh/features/auth%20feature/presenetaion/pages/auth%20page.
 import 'package:hhhhhhhh/features/base%20feature/presentation/controller/base%20page%20cubit.dart';
 import 'package:hhhhhhhh/features/home%20feature/presentation/controller/home%20page%20cubit.dart';
 
-import 'features/auth feature/presenetaion/controller/auth cubit.dart';
+import 'features/auth feature/presenetaion/controller/auth controller/auth cubit.dart';
 import 'features/base feature/presentation/pages/base page.dart';
 import 'features/cart feature/presentation/pages/checkout page.dart';
 import 'features/details feature/presentation/pages/details page.dart';

@@ -34,7 +34,8 @@ class CartBottomSection extends StatelessWidget {
          const  SizedBox(width: 39),
           Expanded(
             child: CustomButton(
-              text: buttonText,
+              widget: Text(buttonText),
+              onPressed: () {},
             ),
           ),
         ],
