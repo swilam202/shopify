@@ -1,6 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:hhhhhhhh/core/services/api/server%20exception.dart';
 import 'package:hhhhhhhh/features/auth%20feature/data/data%20source/base%20auth%20data%20source.dart';
+import 'package:hhhhhhhh/features/auth%20feature/data/models/change%20password%20model.dart';
+import 'package:hhhhhhhh/features/auth%20feature/data/models/login%20model.dart';
+import 'package:hhhhhhhh/features/auth%20feature/data/models/logout%20model.dart';
+import 'package:hhhhhhhh/features/auth%20feature/data/models/register%20model.dart';
 import 'package:hhhhhhhh/features/auth%20feature/domain/entites/change%20password.dart';
 import 'package:hhhhhhhh/features/auth%20feature/domain/entites/login.dart';
 import 'package:hhhhhhhh/features/auth%20feature/domain/entites/logout.dart';
@@ -17,7 +21,7 @@ class AuthRepoitory extends BaseAuthRepository {
     required String newPassword,
     required String token,
   }) async {
-    ChangePassword data = await baseAuthDataSource.postChangePassword(
+    ChangePasswordModel data = await baseAuthDataSource.postChangePassword(
       currentPassword: currentPassword,
       newPassword: newPassword,
       token: token,
@@ -34,7 +38,7 @@ class AuthRepoitory extends BaseAuthRepository {
     required String email,
     required String password,
   }) async {
-    Login data = await baseAuthDataSource.postLogin(
+    LoginModel data = await baseAuthDataSource.postLogin(
       email: email,
       password: password,
     );
@@ -47,7 +51,7 @@ class AuthRepoitory extends BaseAuthRepository {
 
   @override
   Future<Either<Exception, Logout>> postLogout({required String token}) async {
-    Logout data = await baseAuthDataSource.postLogout(token: token);
+    LogoutModel data = await baseAuthDataSource.postLogout(token: token);
     try {
       return Right(data);
     } on ServerException catch (e) {
@@ -63,7 +67,7 @@ class AuthRepoitory extends BaseAuthRepository {
     required String password,
     required String image,
   }) async {
-    Register data = await baseAuthDataSource.postRegister(
+    RegisterModel data = await baseAuthDataSource.postRegister(
       name: name,
       phone: phone,
       email: email,

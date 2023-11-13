@@ -63,16 +63,20 @@ class AuthDataSource extends BaseAuthDataSource {
     required String password,
   }) async {
     http.Response response = await apiServices.post(
-      url: '',
+      url: 'https://student.valuxapps.com/api/login',
       body: {
         "email": email,
         "password": password,
       },
     );
 
+    print("response: $response");
+
     if (response.statusCode == 200) {
       LoginModel model = LoginModel.fromJson(jsonDecode(response.body));
+      print("model: $model");
       return model;
+
     } else {
       throw ServerException(response.body);
     }

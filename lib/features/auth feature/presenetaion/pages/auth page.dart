@@ -12,13 +12,30 @@ import '../widgets/auth row.dart';
 import '../widgets/auth text form field section.dart';
 import '../widgets/auth text form field.dart';
 
-class AuthPage extends StatelessWidget {
+class AuthPage extends StatefulWidget {
   const AuthPage({super.key});
+
+  @override
+  State<AuthPage> createState() => _AuthPageState();
+}
+
+class _AuthPageState extends State<AuthPage> {
+
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      appBar: AppBar(actions: [
+        TextButton(onPressed: ()async{
+                 await BlocProvider.of<AuthCubit>(context).loginFunc();
+
+        }, child: Text('press',style: TextStyle(fontSize: 20,color: Colors.amber),)),
+      ]),
+      body: BlocBuilder<AuthCubit,AuthState>(
+        builder: (context, state) {
+          if(state is AuthSuccessState){
+           return SafeArea(
         child: BlocBuilder<AuthCubit, AuthState>(
           builder: (context, state) {
             return ListView(
@@ -35,6 +52,7 @@ class AuthPage extends StatelessWidget {
                 CustomButton(
                   isLogin: (state is LoginState) ? true : false,
                   text: (state is LoginState) ? 'Log In' : 'Sign Up',
+                  
                 ),
                 const SizedBox(height: 30),
                 const Text(
@@ -52,7 +70,18 @@ class AuthPage extends StatelessWidget {
             );
           },
         ),
-      ),
-    );
+      );
+ 
+          }
+          else if(state is AuthSuccessState){
+                        return Center(child: LinearProgressIndicator(),);
+
+          }
+          else{
+            return Center(child: CircularProgressIndicator(),);
+          }
+        },
+      )
+         );
   }
 }

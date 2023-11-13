@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hhhhhhhh/core/styles/style%20colors.dart';
+import 'package:hhhhhhhh/features/auth%20feature/presenetaion/pages/auth%20page.dart';
 import 'package:hhhhhhhh/features/base%20feature/presentation/controller/base%20page%20cubit.dart';
 import 'package:hhhhhhhh/features/home%20feature/presentation/controller/home%20page%20cubit.dart';
 
@@ -31,7 +32,7 @@ class Shopify extends StatelessWidget {
         theme: ThemeData(
           canvasColor: StyleColor.whiteColor,
         ),
-        home: const BasePage(),
+        home: const AuthPage(),
       ),
     );
   }

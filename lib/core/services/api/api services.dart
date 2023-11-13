@@ -4,6 +4,10 @@ import 'package:http/http.dart' as http;
 
 class APIServices {
   Map<String, String> headers = {
+    //'Content-Type':'text/plain',
+    'Accept':'*/*',
+    'Connection':'keep-alive',
+    'Accept-Encoding':'gzip, deflate, br',
     'lang': 'en',
     'Content-Type': 'application/json',
   };
@@ -29,10 +33,12 @@ class APIServices {
     Uri uri = Uri.parse(url);
     http.Response response = await http.post(
       uri,
-      body: body,
+      body: jsonEncode(body),
       headers: headers,
     );
+    print('rexponse: $response');
     return response;
+    
     /*Map<String, dynamic> data = jsonDecode(response.body);
     print(data);
     return data;*/
