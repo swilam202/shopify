@@ -18,24 +18,13 @@ class LoginCubit extends Cubit<LoginState> {
   }) async {
     emit(LoginLoadingState());
 
-    PostLoginUsecase authDataSource = sl.get<PostLoginUsecase>();
-      Either<Exception, Login> loginData = await authDataSource.excute(
+    PostLoginUsecase postLoginUsecase = sl.get<PostLoginUsecase>();
+      Either<Exception, Login> loginData = await postLoginUsecase.excute(
         email: email,
         password: password,
       );
       loginData.fold((l) => emit(LoginFailureState(l.toString())), (r) => emit(LoginSuccessState(r)));
   }
 
-   @override
-  void onChange(Change<LoginState> change) {
-    // TODO: implement onChange
-    super.onChange(change);
-        print(change);
-    print('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
-
-    print(change);
-        print('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
-
-  }
 
 }
