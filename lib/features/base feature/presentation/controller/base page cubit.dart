@@ -19,17 +19,14 @@ class BasePageCubit extends Cubit<BasePageState> {
       } catch (e) {
         emit(HomePageFailureState(e.toString()));
       }
-    }
-     else if (index == 1) {
+    } else if (index == 1) {
       emit(SearchPageLoadingState());
       try {
         emit(SearchPageSuccessState());
       } catch (e) {
         emit(SearchPageFailureState(e.toString()));
       }
-    }
-  
-     else if (index == 2) {
+    } else if (index == 2) {
       emit(CartPageLoadingState());
       try {
         emit(CartPageSuccessState());
@@ -39,8 +36,7 @@ class BasePageCubit extends Cubit<BasePageState> {
     }
   }
 
-
-  void updateIndex(int value,BuildContext context){
+  void updateIndex(int value, BuildContext context) {
     index = value;
     emit(BasePageUpdateState());
     loadPages(context);

@@ -10,7 +10,7 @@ import '../controller/auth controller/auth state.dart';
 
 import '../widgets/auth row.dart';
 import '../widgets/auth login section.dart';
-import '../widgets/auth signup section.dart';
+import '../widgets/auth register section.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});

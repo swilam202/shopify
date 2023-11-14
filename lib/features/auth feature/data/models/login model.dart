@@ -1,4 +1,4 @@
-import 'package:hhhhhhhh/features/auth%20feature/data/models/login%20data%20model.dart';
+import 'package:hhhhhhhh/features/auth%20feature/data/models/auth%20data%20model.dart';
 import 'package:hhhhhhhh/features/auth%20feature/domain/entites/login.dart';
 
 class LoginModel extends Login {
@@ -12,7 +12,7 @@ class LoginModel extends Login {
     return LoginModel(
       status: json['status'],
       message: json['message'],
-      data: json['data'] == null? null:LoginDataModel.fromJson(json['data']),
+      data: json['data'] == null? null:AuthDataModel.fromJson(json['data']),
     );
   }
 }

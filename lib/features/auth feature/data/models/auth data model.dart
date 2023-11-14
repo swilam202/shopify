@@ -1,7 +1,7 @@
-import 'package:hhhhhhhh/features/auth%20feature/domain/entites/login%20data.dart';
+import 'package:hhhhhhhh/features/auth%20feature/domain/entites/auth%20data.dart';
 
-class LoginDataModel extends LoginData {
-  const LoginDataModel({
+class AuthDataModel extends AuthData {
+  const AuthDataModel({
     required super.id,
     required super.name,
     required super.email,
@@ -10,8 +10,8 @@ class LoginDataModel extends LoginData {
     required super.token,
   });
 
-  factory LoginDataModel.fromJson(Map<String, dynamic> json) {
-    return LoginDataModel(
+  factory AuthDataModel.fromJson(Map<String, dynamic> json) {
+    return AuthDataModel(
       id: json['id'],
       name: json['name'],
       email: json['email'],

@@ -1,5 +1,6 @@
-import 'package:hhhhhhhh/features/auth%20feature/data/models/register%20data%20model.dart';
 import 'package:hhhhhhhh/features/auth%20feature/domain/entites/register.dart';
+
+import 'auth data model.dart';
 
 class RegisterModel extends Register {
   RegisterModel({
@@ -12,7 +13,7 @@ class RegisterModel extends Register {
     return RegisterModel(
       status: json['status'],
       message: json['message'],
-      data: json['data'] == null ? null:RegisterDataModel.fromJson(json['data']),
+      data: json['data'] == null ? null:AuthDataModel.fromJson(json['data']),
     );
   }
 }

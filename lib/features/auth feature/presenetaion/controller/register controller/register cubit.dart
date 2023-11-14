@@ -5,19 +5,19 @@ import 'package:hhhhhhhh/features/auth%20feature/domain/entites/register.dart';
 import 'package:hhhhhhhh/features/auth%20feature/domain/use%20cases/post%20register%20usecase.dart';
 
 import '../../../data/data source/base auth data source.dart';
-import 'signup state.dart';
+import 'register state.dart';
 
-class SignupCubit extends Cubit<SignupState> {
-  SignupCubit() : super(SignupInitialState());
+class RegisterCubit extends Cubit<RegisterState> {
+  RegisterCubit() : super(RegisterInitialState());
 
-  signupFunction({
+  registerFunction({
     required String email,
     required String password,
     required String image,
     required String name,
     required String phone,
   }) async {
-    emit(SignupLoadingState());
+    emit(RegisterLoadingState());
 
     PostRegisterUsecase postRegisterUsecase = sl.get<PostRegisterUsecase>();
 
@@ -29,7 +29,7 @@ class SignupCubit extends Cubit<SignupState> {
       image: image,
     );
 
-    registerData.fold((l) => emit(SignupFailureState(l.toString())),
-        (r) => emit(SignupSuccessState(r)));
+    registerData.fold((l) => emit(RegisterFailureState(l.toString())),
+        (r) => emit(RegisterSuccessState(r)));
   }
 }

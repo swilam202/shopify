@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hhhhhhhh/core/utils/text%20editing%20controller%20eraser.dart';
+import 'package:hhhhhhhh/core/utils/user%20data%20storage.dart';
 import 'package:hhhhhhhh/core/widgets/states/custom%20loading.dart';
 import 'package:hhhhhhhh/core/widgets/toast.dart';
 import 'package:hhhhhhhh/features/auth%20feature/presenetaion/controller/login%20controller/login%20cubit.dart';
@@ -40,6 +42,10 @@ class AuthLogInSection extends StatelessWidget {
             if (state is LoginSuccessState) {
                 if(state.loginData.status){
                   showToast(msg: state.loginData.message, isGreen: true);
+                  UserDataStorage.setData(state.loginData.data!);
+                  textEditingControllerEraser([emailController,passwordController]);
+
+
                 }
                 else{
                   showToast(msg: state.loginData.message, isGreen: false);
@@ -54,8 +60,8 @@ class AuthLogInSection extends StatelessWidget {
           builder: (context, state) {
             return CustomButton(
               widget: (state is LoginLoadingState)
-                  ? CustomLoadingState()
-                  : Text('Login'),
+                  ? const CustomLoadingState()
+                  : const Text('Login'),
               onPressed: (state is LoginLoadingState)
                   ? null
                   : () async {

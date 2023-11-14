@@ -3,11 +3,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hhhhhhhh/core/widgets/states/custom%20loading.dart';
-import 'package:hhhhhhhh/features/auth%20feature/presenetaion/controller/signup%20controller/signup%20cubit.dart';
-import 'package:hhhhhhhh/features/auth%20feature/presenetaion/controller/signup%20controller/signup%20state.dart';
+import 'package:hhhhhhhh/features/auth%20feature/presenetaion/controller/register%20controller/register%20cubit.dart';
+import 'package:hhhhhhhh/features/auth%20feature/presenetaion/controller/register%20controller/register%20state.dart';
 
 import '../../../../core/styles/style colors.dart';
 import '../../../../core/styles/text styles.dart';
+import '../../../../core/utils/text editing controller eraser.dart';
+import '../../../../core/utils/user data storage.dart';
 import '../../../../core/widgets/custom button.dart';
 import '../../../../core/widgets/toast.dart';
 import 'auth text form field.dart';
@@ -54,28 +56,31 @@ class AuthSignUpSection extends StatelessWidget {
         ),
         
         const SizedBox(height: 50),
-        BlocConsumer<SignupCubit,SignupState>(
+        BlocConsumer<RegisterCubit,RegisterState>(
           listener: (context, state) {
-             if (state is SignupSuccessState) {
-                if(state.loginData.status){
-                  showToast(msg: state.loginData.message, isGreen: true);
+             if (state is RegisterSuccessState) {
+                if(state.registerData.status){
+                  showToast(msg: state.registerData.message, isGreen: true);
+                   UserDataStorage.setData(state.registerData.data!);
+                  textEditingControllerEraser([emailController,passwordController]);
+
                 }
                 else{
-                  showToast(msg: state.loginData.message, isGreen: false);
+                  showToast(msg: state.registerData.message, isGreen: false);
                 }
             }
-            else if (state is SignupFailureState) {
+            else if (state is RegisterFailureState) {
                 showToast(msg: state.errorMessage, isGreen: false);
             }
           },
           builder: (context, state) {
              return  CustomButton(
-                 widget: (state is SignupLoadingState)? CustomLoadingState()
+                 widget: (state is RegisterLoadingState)? CustomLoadingState()
                     :  Text('Signup'),
-                 onPressed:(state is SignupLoadingState)
+                 onPressed:(state is RegisterLoadingState)
                     ? null
                     :  () async{
-                 await BlocProvider.of<SignupCubit>(context).signupFunction(email: emailController.text, password: passwordController.text, image: 'image', name: nameController.text, phone: phoneController.text,);
+                 await BlocProvider.of<RegisterCubit>(context).registerFunction(email: emailController.text, password: passwordController.text, image: 'image', name: nameController.text, phone: phoneController.text,);
                     },);
               
           },

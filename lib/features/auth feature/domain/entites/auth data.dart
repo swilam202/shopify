@@ -1,4 +1,4 @@
-class LoginData {
+class AuthData {
   final int id;
   final String name;
   final String email;
@@ -6,7 +6,7 @@ class LoginData {
   final String image;
   final String token;
 
-  const LoginData({
+  const AuthData({
     required this.id,
     required this.name,
     required this.email,
