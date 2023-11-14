@@ -2,12 +2,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hhhhhhhh/core/widgets/states/custom%20loading.dart';
 import 'package:hhhhhhhh/features/auth%20feature/presenetaion/controller/signup%20controller/signup%20cubit.dart';
 import 'package:hhhhhhhh/features/auth%20feature/presenetaion/controller/signup%20controller/signup%20state.dart';
 
 import '../../../../core/styles/style colors.dart';
 import '../../../../core/styles/text styles.dart';
 import '../../../../core/widgets/custom button.dart';
+import '../../../../core/widgets/toast.dart';
 import 'auth text form field.dart';
 import 'positions enum.dart';
 
@@ -52,12 +54,25 @@ class AuthSignUpSection extends StatelessWidget {
         ),
         
         const SizedBox(height: 50),
-        BlocBuilder<SignupCubit,SignupState>(
+        BlocConsumer<SignupCubit,SignupState>(
+          listener: (context, state) {
+             if (state is SignupSuccessState) {
+                if(state.loginData.status){
+                  showToast(msg: state.loginData.message, isGreen: true);
+                }
+                else{
+                  showToast(msg: state.loginData.message, isGreen: false);
+                }
+              
+            }
+            else if (state is SignupFailureState) {
+                showToast(msg: state.errorMessage, isGreen: false);
+
+            }
+          },
           builder: (context, state) {
              return  CustomButton(
-                 widget: (state is SignupLoadingState)? Center(
-                        child: CircularProgressIndicator(),
-                      )
+                 widget: (state is SignupLoadingState)? CustomLoadingState()
                     :  Text('Signup'),
                  onPressed:(state is SignupLoadingState)
                     ? null

@@ -40,7 +40,6 @@ class AuthLogInSection extends StatelessWidget {
             if (state is LoginSuccessState) {
                 if(state.loginData.status){
                   showToast(msg: state.loginData.message, isGreen: true);
-            
                 }
                 else{
                   showToast(msg: state.loginData.message, isGreen: false);

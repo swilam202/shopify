@@ -5,14 +5,14 @@ class RegisterModel extends Register {
   RegisterModel({
     required super.status,
     required super.message,
-    required super.data,
+     super.data,
   });
 
   factory RegisterModel.fromJson(Map<String, dynamic> json) {
     return RegisterModel(
       status: json['status'],
       message: json['message'],
-      data: RegisterDataModel.fromJson(json['data']),
+      data: json['data'] == null ? null:RegisterDataModel.fromJson(json['data']),
     );
   }
 }

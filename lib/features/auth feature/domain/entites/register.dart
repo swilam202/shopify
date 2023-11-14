@@ -3,11 +3,11 @@ import 'package:hhhhhhhh/features/auth%20feature/domain/entites/register%20data.
 class Register {
   final bool status;
   final String message;
-  final RegisterData data;
+  final RegisterData? data;
 
   const Register({
     required this.status,
     required this.message,
-    required this.data,
+    this.data,
   });
 }

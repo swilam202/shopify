@@ -120,7 +120,7 @@ class AuthDataSource extends BaseAuthDataSource {
       RegisterModel model = RegisterModel.fromJson(jsonDecode(response.body));
       return model;
     } else {
-      throw ServerException(response.body);
+      throw ServerException(jsonDecode(response.body));
     }
   }
 }
