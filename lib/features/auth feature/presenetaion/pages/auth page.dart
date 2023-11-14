@@ -34,7 +34,7 @@ class _AuthPageState extends State<AuthPage> {
         child: BlocBuilder<AuthCubit, AuthState>(
           builder: (context, state) {
             return ListView(
-              padding: EdgeInsets.all(23),
+              padding: EdgeInsets.all(24),
               physics: const BouncingScrollPhysics(),
               children: [
                 const SizedBox(height: 50),

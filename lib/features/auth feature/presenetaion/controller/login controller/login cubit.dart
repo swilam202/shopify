@@ -1,4 +1,9 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hhhhhhhh/core/services/service%20locator.dart';
+import 'package:hhhhhhhh/features/auth%20feature/data/repository/auth%20repository.dart';
+import 'package:hhhhhhhh/features/auth%20feature/domain/repoitory/base%20auth%20repoistory.dart';
+import 'package:hhhhhhhh/features/auth%20feature/domain/use%20cases/post%20login%20usecase.dart';
 import 'package:hhhhhhhh/features/auth%20feature/presenetaion/controller/login%20controller/login%20state.dart';
 
 import '../../../data/data source/base auth data source.dart';
@@ -12,19 +17,13 @@ class LoginCubit extends Cubit<LoginState> {
     required String password,
   }) async {
     emit(LoginLoadingState());
-    try {
-      AuthDataSource authDataSource = AuthDataSource();
-      Login loginData = await authDataSource.postLogin(
+
+    PostLoginUsecase authDataSource = sl.get<PostLoginUsecase>();
+      Either<Exception, Login> loginData = await authDataSource.excute(
         email: email,
         password: password,
       );
-     
-      emit(LoginSuccessState(loginData));
-      
- 
-    } catch (e) {
-      emit(LoginFailureState(e.toString()));
-    }
+      loginData.fold((l) => emit(LoginFailureState(l.toString())), (r) => emit(LoginSuccessState(r)));
   }
 
    @override

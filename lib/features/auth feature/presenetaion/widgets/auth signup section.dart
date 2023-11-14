@@ -63,11 +63,9 @@ class AuthSignUpSection extends StatelessWidget {
                 else{
                   showToast(msg: state.loginData.message, isGreen: false);
                 }
-              
             }
             else if (state is SignupFailureState) {
                 showToast(msg: state.errorMessage, isGreen: false);
-
             }
           },
           builder: (context, state) {

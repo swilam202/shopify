@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hhhhhhhh/core/services/service%20locator.dart';
 import 'package:hhhhhhhh/core/styles/style%20colors.dart';
 import 'package:hhhhhhhh/features/auth%20feature/presenetaion/controller/login%20controller/login%20cubit.dart';
 import 'package:hhhhhhhh/features/auth%20feature/presenetaion/controller/signup%20controller/signup%20cubit.dart';
@@ -15,6 +16,8 @@ import 'features/search feature/presentation/controller/search page cubit.dart';
 import 'features/search feature/presentation/pages/result page.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+   ServiceLocator().setup();
   runApp(const Shopify());
 }
 
