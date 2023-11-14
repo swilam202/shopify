@@ -70,15 +70,14 @@ class AuthDataSource extends BaseAuthDataSource {
       },
     );
 
-    print("response: $response");
-
     if (response.statusCode == 200) {
       LoginModel model = LoginModel.fromJson(jsonDecode(response.body));
-      print("model: $model");
+
+
       return model;
 
     } else {
-      throw ServerException(response.body);
+      throw ServerException(jsonDecode(response.body));
     }
   }
 

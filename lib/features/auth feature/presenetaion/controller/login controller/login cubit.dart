@@ -4,26 +4,39 @@ import 'package:hhhhhhhh/features/auth%20feature/presenetaion/controller/login%2
 import '../../../data/data source/base auth data source.dart';
 import '../../../domain/entites/login.dart';
 
+class LoginCubit extends Cubit<LoginState> {
+  LoginCubit() : super(LoginInitialState());
 
-
-class LoginCubit extends Cubit<LoginState>{
-  LoginCubit():super(LoginInitialState());
-
-
-
-
-   loginFunction({required String email,required String password,})async{
+  loginFunction({
+    required String email,
+    required String password,
+  }) async {
     emit(LoginLoadingState());
-    try{
+    try {
       AuthDataSource authDataSource = AuthDataSource();
-      Login a = await authDataSource.postLogin(email: email,password:  password,);
-        print(a.message.toString());
-        
-      emit(LoginSuccessState());
+      Login loginData = await authDataSource.postLogin(
+        email: email,
+        password: password,
+      );
+     
+      emit(LoginSuccessState(loginData));
+      
+ 
+    } catch (e) {
+      emit(LoginFailureState(e.toString()));
     }
-    catch (e){
-      emit(LoginFailureState());
-    }
+  }
+
+   @override
+  void onChange(Change<LoginState> change) {
+    // TODO: implement onChange
+    super.onChange(change);
+        print(change);
+    print('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
+
+    print(change);
+        print('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
+
   }
 
 }

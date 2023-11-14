@@ -5,14 +5,14 @@ class LoginModel extends Login {
   LoginModel({
     required super.status,
     required super.message,
-    required super.data,
+     super.data,
   });
 
   factory LoginModel.fromJson(Map<String, dynamic> json) {
     return LoginModel(
       status: json['status'],
       message: json['message'],
-      data: LoginDataModel.fromJson(json['data']),
+      data: json['data'] == null? null:LoginDataModel.fromJson(json['data']),
     );
   }
 }

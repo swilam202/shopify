@@ -4,11 +4,10 @@ import 'package:http/http.dart' as http;
 
 class APIServices {
   Map<String, String> headers = {
-    //'Content-Type':'text/plain',
     'Accept':'*/*',
     'Connection':'keep-alive',
     'Accept-Encoding':'gzip, deflate, br',
-    'lang': 'en',
+    'lang': 'ar',
     'Content-Type': 'application/json',
   };
 
@@ -17,9 +16,7 @@ class APIServices {
     http.Response response = await http.get(uri, headers: headers);
     return response;
 
-    /*Map<String, dynamic> data = jsonDecode(response.body);
-    print(data);
-    return data;*/
+
   }
 
   Future<http.Response> post({
@@ -36,11 +33,9 @@ class APIServices {
       body: jsonEncode(body),
       headers: headers,
     );
-    print('rexponse: $response');
+
+
     return response;
-    
-    /*Map<String, dynamic> data = jsonDecode(response.body);
-    print(data);
-    return data;*/
+
   }
 }

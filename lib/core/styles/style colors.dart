@@ -6,4 +6,6 @@ class StyleColor {
   static const darkColor = Color(0xff707070);
   static const lightColor = Color(0xff727C8E);
   static const whiteColor = Color(0xffFFFFFF);
+  static const greenColor = Colors.green;
+  static const redColor = Colors.red;
 }

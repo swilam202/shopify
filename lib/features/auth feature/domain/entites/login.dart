@@ -8,6 +8,6 @@ class Login {
   const Login({
     required this.status,
     required this.message,
-    required this.data,
+     this.data,
   });
 }
