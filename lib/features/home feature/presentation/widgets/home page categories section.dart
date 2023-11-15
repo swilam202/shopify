@@ -14,39 +14,53 @@ class HomePageCategoriesSection extends StatelessWidget {
   final List<CategoryData> categories;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.2,
-      child: CustomCarouselSlider(
-        items: List.generate(
-          categories.length,
-          (index) => Stack(
-            alignment: Alignment.bottomCenter,
-            children: [
-              SizedBox(
-                child: Image.network(
-                  categories[index].image,
-                  fit: BoxFit.fill,
-                ),
-              ),
-              Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 16),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                  color: StyleColor.darkColor,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        categories[index].name,
-                        style: TextStyles.style20Bold
-                            .copyWith(color: StyleColor.whiteColor),
-                      ),
-                    ],
-                  )),
-            ],
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 13),
+          child: Text(
+            'Cateories',
+            style: TextStyles.style30Bold,
           ),
         ),
-      ),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.2,
+          width: MediaQuery.of(context).size.width,
+          child: CustomCarouselSlider(
+            items: List.generate(
+              categories.length,
+              (index) => Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  SizedBox(
+                    child: Image.network(
+                      categories[index].image,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 16),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    color: StyleColor.darkColor,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          categories[index].name,
+                          style: TextStyles.style20Bold
+                              .copyWith(color: StyleColor.whiteColor),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

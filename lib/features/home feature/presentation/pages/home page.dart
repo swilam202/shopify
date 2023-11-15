@@ -42,18 +42,12 @@ class _HomePageState extends State<HomePage> {
           physics: const BouncingScrollPhysics(),
           children: [
             const SizedBox(height: 30),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 13),
-              child: Text(
-                'Cateories',
-                style: TextStyles.style30Bold,
-              ),
-            ),
+            
            HomePageCategoriesSection(categories: state.category.categoryData),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 25, vertical: 13),
               child: Text(
-                'Hot',
+                'Trending',
                 style: TextStyles.style30Bold,
               ),
             ),
