@@ -1,11 +1,11 @@
 import 'category data.dart';
 
-class Categories {
+class Category {
   final bool status;
   final String? message;
   final CategoryData categoryData;
 
-  Categories({
+  Category({
     required this.status,
     this.message,
     required this.categoryData,
