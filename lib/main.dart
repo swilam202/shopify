@@ -6,13 +6,14 @@ import 'package:hhhhhhhh/features/auth%20feature/presenetaion/controller/login%2
 import 'package:hhhhhhhh/features/auth%20feature/presenetaion/controller/register%20controller/register%20cubit.dart';
 import 'package:hhhhhhhh/features/auth%20feature/presenetaion/pages/auth%20page.dart';
 import 'package:hhhhhhhh/features/base%20feature/presentation/controller/base%20page%20cubit.dart';
+import 'package:hhhhhhhh/features/home%20feature/presentation/controller/trending%20controller/trending%20cubit.dart';
 import 'package:hhhhhhhh/features/home%20feature/presentation/pages/home%20page.dart';
 
 import 'features/auth feature/presenetaion/controller/auth controller/auth cubit.dart';
 import 'features/base feature/presentation/pages/base page.dart';
 import 'features/cart feature/presentation/pages/checkout page.dart';
 import 'features/details feature/presentation/pages/details page.dart';
-import 'features/home feature/presentation/controller/categories cubit/home page categories cubit.dart';
+import 'features/home feature/presentation/controller/categories controller/home page categories cubit.dart';
 import 'features/search feature/presentation/controller/search page cubit.dart';
 import 'features/search feature/presentation/pages/result page.dart';
 
@@ -33,7 +34,7 @@ class Shopify extends StatelessWidget {
         BlocProvider(create: (context) => LoginCubit()),
         BlocProvider(create: (context) => RegisterCubit()),
         BlocProvider(create: (context) => HomePageCategoriesCubit()..loadPage()),
-        //BlocProvider(create: (context) => BasePageCubit()..loadPages(context)),
+        BlocProvider(create: (context) => HomePageTrendingCubit()..loadPage()),
       ],
       child: MaterialApp(
         theme: ThemeData(

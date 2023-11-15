@@ -7,8 +7,8 @@ import 'package:hhhhhhhh/features/home%20feature/domain/entites/category%20data.
 
 import '../../../../core/widgets/custom carousel slider.dart';
 import '../../../../core/widgets/states/custom loading.dart';
-import '../controller/categories cubit/home page categories cubit.dart';
-import '../controller/categories cubit/home page categories state.dart';
+import '../controller/categories controller/home page categories cubit.dart';
+import '../controller/categories controller/home page categories state.dart';
 
 class HomePageCategoriesSection extends StatefulWidget {
   const HomePageCategoriesSection({super.key});
@@ -27,7 +27,7 @@ class _HomePageCategoriesSectionState extends State<HomePageCategoriesSection> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder(
+    return BlocBuilder<HomePageCategoriesCubit,HomePageCategoriesState>(
       builder: (context, state) {
         if (state is HomePageCategoriesSuccessState) {
           return Column(

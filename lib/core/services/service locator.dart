@@ -11,6 +11,7 @@ import '../../features/home feature/data/data source/base home page data source.
 import '../../features/home feature/data/repository/category repository.dart';
 import '../../features/home feature/domain/repository/base home page repository.dart';
 import '../../features/home feature/domain/usecase/get category usecase.dart';
+import '../../features/home feature/domain/usecase/get trending usecase.dart';
 
   final GetIt sl = GetIt.instance;
 
@@ -27,6 +28,7 @@ class ServiceLocator{
     sl.registerLazySingleton<PostLoginUsecase>(() => PostLoginUsecase(sl()));
     sl.registerLazySingleton<PostRegisterUsecase>(() => PostRegisterUsecase(sl()));
     sl.registerLazySingleton<GetCategoryUsecase>(() => GetCategoryUsecase(sl()));
+    sl.registerLazySingleton<GetTrendingUsecase>(() => GetTrendingUsecase(sl()));
 
 
   }

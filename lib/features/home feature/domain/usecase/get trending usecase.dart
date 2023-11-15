@@ -3,9 +3,9 @@ import 'package:hhhhhhhh/features/home%20feature/domain/repository/base%20home%2
 
 import '../entites/trending.dart';
 
-class GetTredningUsecase {
+class GetTrendingUsecase {
   BaseHomePageRepository baseHomePageRepository;
-  GetTredningUsecase(this.baseHomePageRepository);
+  GetTrendingUsecase(this.baseHomePageRepository);
   Future<Either<Exception, List<Trending>>> excute() async {
     return await baseHomePageRepository.getTrending();
   }

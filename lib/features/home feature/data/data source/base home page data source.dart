@@ -33,11 +33,14 @@ class HomePageDataSource extends BaseHomePageDataSource {
     http.Response response =
         await apiServices.get(url: 'https://student.valuxapps.com/api/home');
     if (response.statusCode == 200) {
+        var a = jsonDecode(response.body);
+
       List<TrendingModel> trendingModel = List.from(
-        ((jsonDecode(response.body)['products']) as List).map(
+        ((jsonDecode(response.body)['data']['products']) as List).map(
           (e) => TrendingModel.fromJson(e),
         ),
       );
+
       return trendingModel;
     } else {
       throw ServerException(jsonDecode(response.body));

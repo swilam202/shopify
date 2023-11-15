@@ -7,6 +7,8 @@ class TrendingModel extends Trending {
     required super.oldPrice,
     required super.discount,
     required super.image,
+    required super.name,
+    
   });
 
   factory TrendingModel.fromJson(Map<String, dynamic> json) {
@@ -16,6 +18,7 @@ class TrendingModel extends Trending {
       oldPrice: json['old_price'],
       discount: json['discount'],
       image: json['image'],
+      name: json['name'],
     );
   }
 }

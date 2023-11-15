@@ -14,7 +14,12 @@ class APIServices {
   Future<http.Response> get({required String url}) async {
     Uri uri = Uri.parse(url);
     http.Response response = await http.get(uri, headers: headers);
+    print('++++++++++++++++++++++++++++++++++++++');
+print(response);
+print('++++++++++++++++++++++++++++++++++++++');
     return response;
+
+
 
 
   }

@@ -9,11 +9,11 @@ import 'package:hhhhhhhh/features/home%20feature/domain/repository/base%20home%2
 import 'package:hhhhhhhh/features/home%20feature/domain/usecase/get%20category%20usecase.dart';
 
 import '../../../../core/styles/text styles.dart';
-import '../controller/categories cubit/home page categories cubit.dart';
-import '../controller/categories cubit/home page categories state.dart';
+import '../controller/categories controller/home page categories cubit.dart';
+import '../controller/categories controller/home page categories state.dart';
 import '../widgets/custom home page appbar.dart';
 import '../widgets/home page categories section.dart';
-import '../widgets/home page grid view.dart';
+import '../widgets/home page trending section.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -32,14 +32,7 @@ class _HomePageState extends State<HomePage> {
         children: const [
           SizedBox(height: 30),
           HomePageCategoriesSection(),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25, vertical: 13),
-            child: Text(
-              'Trending',
-              style: TextStyles.style30Bold,
-            ),
-          ),
-          HomePageDataGridView(),
+          HomePageTrendingSection(),
         ],
       ),
     ));
