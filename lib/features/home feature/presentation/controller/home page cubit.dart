@@ -14,8 +14,6 @@ class HomePageCubit extends Cubit<HomePageState> {
     Either<Exception, Category> data =
         await sl.get<GetCategoryUsecase>().excute();
 
-        print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
-        print(data);
     data.fold(
       (l) => emit(HomePageFailureState(l.toString())),
       (r) => emit(HomePageSuccessState(r)),

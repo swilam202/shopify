@@ -10,7 +10,8 @@ class CustomCarouselSlider extends StatelessWidget {
     items: items,
     options: CarouselOptions(
       autoPlay: true,
-      aspectRatio: 1 / 2,
+      aspectRatio: 1 / 3,
+      
       autoPlayAnimationDuration: const Duration(seconds: 1),
       autoPlayCurve: Curves.fastEaseInToSlowEaseOut,
       reverse: false,

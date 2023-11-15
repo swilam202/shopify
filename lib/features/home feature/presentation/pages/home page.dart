@@ -12,7 +12,7 @@ import 'package:hhhhhhhh/features/home%20feature/presentation/controller/home%20
 
 import '../../../../core/styles/text styles.dart';
 import '../widgets/custom home page appbar.dart';
-import '../widgets/home page categories listview.dart';
+import '../widgets/home page categories section.dart';
 import '../widgets/home page grid view.dart';
 
 class HomePage extends StatefulWidget {
@@ -49,19 +49,7 @@ class _HomePageState extends State<HomePage> {
                 style: TextStyles.style30Bold,
               ),
             ),
-            SizedBox(
-              height: 200,
-              child: CustomCarouselSlider(
-                items: List.generate(
-                  state.category.categoryData.length,
-                  (index) => Container(
-                    margin: const EdgeInsets.all(12),
-                    color: Colors.primaries[index],
-                    child: Text(state.category.categoryData[index].name,style: TextStyle(color: Colors.amber,fontSize: 29),),
-                  ),
-                ),
-              ),
-            ),
+           HomePageCategoriesSection(categories: state.category.categoryData),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 25, vertical: 13),
               child: Text(
