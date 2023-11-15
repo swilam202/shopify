@@ -1,8 +1,17 @@
-import 'package:hhhhhhhh/features/base%20feature/presentation/controller/base%20page%20state.dart';
+import '../../domain/entites/category.dart';
 
-class HomePageLoadingState extends BasePageState{}
-class HomePageFailureState extends BasePageState{
+abstract class HomePageState {}
+
+class HomePageLoadingState extends HomePageState {}
+class HomePageInitialState extends HomePageState {}
+
+class HomePageFailureState extends HomePageState {
   final String errorMessage;
   HomePageFailureState(this.errorMessage);
 }
-class HomePageSuccessState extends BasePageState{}
+
+class HomePageSuccessState extends HomePageState {
+  final Category category;
+
+  HomePageSuccessState(this.category);
+}

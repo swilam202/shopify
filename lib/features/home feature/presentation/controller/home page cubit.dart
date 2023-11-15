@@ -1,19 +1,25 @@
-/*
-
+import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hhhhhhhh/features/base%20feature/presentation/controller/base%20page%20state.dart';
-import 'package:hhhhhhhh/features/home%20feature/presentation/controller/home%20page%20state.dart';
+import 'package:hhhhhhhh/core/services/service%20locator.dart';
+import 'package:hhhhhhhh/features/home%20feature/domain/usecase/get%20category%20usecase.dart';
 
-class HomePageCubit extends Cubit<BasePageState>{
-  HomePageCubit():super(HomePageInitialState());
+import '../../domain/entites/category.dart';
+import 'home page state.dart';
 
-  void loadPage(){
+class HomePageCubit extends Cubit<HomePageState> {
+  HomePageCubit() : super(HomePageInitialState());
+
+  void loadPage() async {
     emit(HomePageLoadingState());
-    try{
-      HomePageSuccessState();
+    Either<Exception, Category> data =
+        await sl.get<GetCategoryUsecase>().excute();
 
-    } catch(e){
-      emit(HomePageFailureState());
-    }
+        print('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
+        print(data);
+    data.fold(
+      (l) => emit(HomePageFailureState(l.toString())),
+      (r) => emit(HomePageSuccessState(r)),
+    );
   }
-}*/
+
+}

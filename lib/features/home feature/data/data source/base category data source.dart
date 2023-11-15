@@ -17,6 +17,7 @@ class CategoryDataSource extends BaseCategoryDataSource {
     if (response.statusCode == 200) {
       CategoryModel categoryModel =
           CategoryModel.fromJson(jsonDecode(response.body));
+      
       return categoryModel;
     } else {
       throw ServerException(jsonDecode(response.body));

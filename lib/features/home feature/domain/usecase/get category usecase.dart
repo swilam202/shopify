@@ -9,6 +9,8 @@ class GetCategoryUsecase {
   GetCategoryUsecase(this.baseCategoriesRepository);
 
   Future<Either<Exception, Category>> excute() async {
+  
+   
     return await baseCategoriesRepository.getCategory();
   }
 }

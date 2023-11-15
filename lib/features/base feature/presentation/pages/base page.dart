@@ -10,7 +10,7 @@ import 'package:hhhhhhhh/features/search%20feature/presentation/pages/search%20p
 import '../../../cart feature/presentation/controller/cart state.dart';
 import '../../../cart feature/presentation/pages/cart page.dart';
 import '../../../home feature/presentation/pages/home page.dart';
-
+/*
 class BasePage extends StatelessWidget {
   const BasePage({super.key});
 
@@ -55,3 +55,4 @@ class BasePage extends StatelessWidget {
     );
   }
 }
+*/

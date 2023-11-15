@@ -13,9 +13,12 @@ class CategoryRepository extends BaseCategoriesRepository{
   Future<Either<Exception, Category>> getCategory() async{
    CategoryModel data = await baseCategoryDataSource.getCategory();
    try{
+   
+
     return Right(data);
    }
    on ServerException catch(e){
+    
     return Left(e);
    }
   }

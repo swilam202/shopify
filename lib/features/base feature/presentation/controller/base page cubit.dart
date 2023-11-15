@@ -7,7 +7,7 @@ import '../../../cart feature/presentation/controller/cart state.dart';
 import '../../../search feature/presentation/controller/search page cubit.dart';
 import '../../../search feature/presentation/controller/search page state.dart';
 import 'base page state.dart';
-
+/*
 class BasePageCubit extends Cubit<BasePageState> {
   BasePageCubit() : super(BasePageInitialState());
   int index = 0;
@@ -42,3 +42,4 @@ class BasePageCubit extends Cubit<BasePageState> {
     loadPages(context);
   }
 }
+*/
