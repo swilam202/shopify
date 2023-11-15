@@ -6,7 +6,7 @@ import '../entites/trending.dart';
 class GetTredningUsecase {
   BaseHomePageRepository baseHomePageRepository;
   GetTredningUsecase(this.baseHomePageRepository);
-  Future<Either<Exception,Trending>> excute()async{
+  Future<Either<Exception, List<Trending>>> excute() async {
     return await baseHomePageRepository.getTrending();
   }
 }
