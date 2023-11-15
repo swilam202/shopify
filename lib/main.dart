@@ -17,7 +17,7 @@ import 'features/search feature/presentation/pages/result page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-   ServiceLocator().setup();
+  ServiceLocator().setup();
   runApp(const Shopify());
 }
 
@@ -32,14 +32,12 @@ class Shopify extends StatelessWidget {
         BlocProvider(create: (context) => LoginCubit()),
         BlocProvider(create: (context) => RegisterCubit()),
         BlocProvider(create: (context) => BasePageCubit()..loadPages(context)),
-        
-
       ],
-      child:  MaterialApp(
+      child: MaterialApp(
         theme: ThemeData(
           canvasColor: StyleColor.whiteColor,
         ),
-        home: const AuthPage(),
+        home: const BasePage(),
       ),
     );
   }
