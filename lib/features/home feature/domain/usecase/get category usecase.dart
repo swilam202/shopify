@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:hhhhhhhh/features/home%20feature/domain/repository/base%20categoies%20repository.dart';
+import 'package:hhhhhhhh/features/home%20feature/domain/repository/base%20home%20page%20repository.dart';
 
 import '../entites/category.dart';
 
 class GetCategoryUsecase {
-  final BaseCategoriesRepository baseCategoriesRepository;
+  final BaseHomePageRepository baseCategoriesRepository;
 
   GetCategoryUsecase(this.baseCategoriesRepository);
 
