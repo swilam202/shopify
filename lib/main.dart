@@ -6,6 +6,7 @@ import 'package:hhhhhhhh/features/auth%20feature/presenetaion/controller/login%2
 import 'package:hhhhhhhh/features/auth%20feature/presenetaion/controller/register%20controller/register%20cubit.dart';
 import 'package:hhhhhhhh/features/auth%20feature/presenetaion/pages/auth%20page.dart';
 import 'package:hhhhhhhh/features/base%20feature/presentation/controller/base%20page%20cubit.dart';
+import 'package:hhhhhhhh/features/cart%20feature/presentation/controller/cart%20cubit.dart';
 import 'package:hhhhhhhh/features/cart%20feature/presentation/pages/cart%20page.dart';
 import 'package:hhhhhhhh/features/home%20feature/presentation/controller/trending%20controller/trending%20cubit.dart';
 import 'package:hhhhhhhh/features/home%20feature/presentation/pages/home%20page.dart';
@@ -36,6 +37,7 @@ class Shopify extends StatelessWidget {
         BlocProvider(create: (context) => RegisterCubit()),
         BlocProvider(create: (context) => HomePageCategoriesCubit()..loadPage()),
         BlocProvider(create: (context) => HomePageTrendingCubit()..loadPage()),
+        BlocProvider(create: (context) => CartCubit()..loadData()),
       ],
       child: MaterialApp(
         theme: ThemeData(

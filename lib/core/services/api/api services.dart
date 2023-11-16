@@ -9,6 +9,7 @@ class APIServices {
     'Accept-Encoding':'gzip, deflate, br',
     'lang': 'ar',
     'Content-Type': 'application/json',
+    'Authorization':'47RRiZR2ulySmWPtTHE62fPQhoHWa0eBBzOrIBjZHlrD5FwFYaSZqFmJxBsIwENgw2oceG',
   };
 
   Future<http.Response> get({required String url}) async {

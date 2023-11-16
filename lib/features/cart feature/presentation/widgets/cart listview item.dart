@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hhhhhhhh/features/cart%20feature/domain/entites/cart%20data.dart';
 
 import '../../../../core/styles/style colors.dart';
 import '../../../../core/styles/text styles.dart';
@@ -7,8 +8,8 @@ import '../../../../core/styles/text styles.dart';
 
 
 class CartListViewItem extends StatelessWidget {
-  const CartListViewItem({super.key});
-
+  const CartListViewItem(this.cartData,{super.key});
+  final CartData cartData;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -36,17 +37,15 @@ class CartListViewItem extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Faux Sued Ankle Boots',
+             Text(
+              cartData.name,
               style: TextStyles.style15Medium,
+
             ),
-            const Text(
-              '7, Hot Pink',
-              style: TextStyles.style15Light,
-            ),
+            
             const SizedBox(height: 11),
-            const Text(
-              '\$49.99',
+             Text(
+              '\$ ${cartData.price.toStringAsFixed(1)}',
               style: TextStyles.style15Medium,
             ),
             Row(
@@ -55,8 +54,8 @@ class CartListViewItem extends StatelessWidget {
                   onPressed: () {},
                   icon: const Icon(Icons.remove),
                 ),
-                const Text(
-                  '1',
+                 Text(
+                  cartData.quantity.toString(),
                   style: TextStyles.style15Regular,
                 ),
                 IconButton(
