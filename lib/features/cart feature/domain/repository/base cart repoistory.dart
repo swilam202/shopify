@@ -6,5 +6,5 @@ import 'package:hhhhhhhh/features/cart%20feature/domain/entites/update%20cart.da
 abstract class BaseCartRepository {
   Future<Either<Exception, AddRemoveCart>> postAddRemoveCart(int productId);
   Future<Either<Exception, Cart>> getCart();
-  Future<Either<Exception, UpdateCart>> updateCart(int productId);
+  Future<Either<Exception, UpdateCart>> updateCart(int quantiny);
 }

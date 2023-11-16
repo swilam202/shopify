@@ -43,4 +43,25 @@ print('++++++++++++++++++++++++++++++++++++++');
     return response;
 
   }
+
+
+   Future<http.Response> put({
+    required String url,
+    required Map<String, dynamic> body,
+    String? token,
+  }) async {
+    if (token != null) {
+      headers.addAll({'Authorization': token});
+    }
+    Uri uri = Uri.parse(url);
+    http.Response response = await http.put(
+      uri,
+      body: jsonEncode(body),
+      headers: headers,
+    );
+
+
+    return response;
+
+  }
 }
