@@ -13,25 +13,27 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 30),
-            Text(
-              'Cart',
-              style: TextStyles.style30Bold,
-            ),
-            SizedBox(height: 18),
-            Expanded(
-              child: CartListView(),
-            ),
-            SizedBox(height: 18),
-            CustomDivider(),
-            CartBottomSection(buttonText: 'Checkout',),
-          ],
+    return const Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 25),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 30),
+              Text(
+                'Cart',
+                style: TextStyles.style30Bold,
+              ),
+              SizedBox(height: 18),
+              Expanded(
+                child: CartListView(),
+              ),
+              SizedBox(height: 18),
+              CustomDivider(),
+              CartBottomSection(buttonText: 'Checkout',),
+            ],
+          ),
         ),
       ),
     );
