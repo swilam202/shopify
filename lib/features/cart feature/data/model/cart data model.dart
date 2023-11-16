@@ -7,11 +7,13 @@ class CartDataModel extends CartData {
     required super.price,
     required super.image,
     required super.name,
+    required super.productId,
   });
 
   factory CartDataModel.fromJson(Map<String, dynamic> json) {
     return CartDataModel(
       id: json['id'],
+      productId: json['product']['id'],
       quantity: json['quantity'],
       price: json['product']['price'],
       image: json['product']['image'],

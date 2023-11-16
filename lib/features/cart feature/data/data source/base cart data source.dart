@@ -30,7 +30,8 @@ class CartDataSource extends BaseCartDataSource{
     if (response.statusCode == 200) {
       AddRemoveCartModel model = AddRemoveCartModel.fromJson(jsonDecode(response.body));
 
-
+      print('++++++++++++++++++++++++++++++++++++++++++++++');
+      print(model.message);
       return model;
 
     } else {
@@ -69,8 +70,7 @@ if (response.statusCode == 200) {
     if (response.statusCode == 200) {
       UpdateCartModel model = UpdateCartModel.fromJson(jsonDecode(response.body));
 
-      print('++++++++++++++++++++++++++++++++++++++++++++++');
-      print(model.messaga);
+
       return model;
 
     } else {

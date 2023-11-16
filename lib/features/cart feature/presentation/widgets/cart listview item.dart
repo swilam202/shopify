@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hhhhhhhh/features/cart%20feature/domain/entites/cart%20data.dart';
+import 'package:hhhhhhhh/features/cart%20feature/domain/usecase/add%20remove%20cart%20usecase.dart';
 import 'package:hhhhhhhh/features/cart%20feature/domain/usecase/update%20cart%20usecase.dart';
 
 import '../../../../core/services/service locator.dart';
@@ -71,6 +72,13 @@ class CartListViewItem extends StatelessWidget {
                       sl.get<UpdateCartUsecase>().excute(valueNotifier.value,cartData.id);
                     },
                     icon: const Icon(Icons.add),
+                  ),
+                  Spacer(),
+                  IconButton(
+                    onPressed: () {
+                     sl.get<AddRemoveCartUseCase>().excute(cartData.productId);
+                    },
+                    icon: const Icon(Icons.delete),
                   ),
                 ],
               )
