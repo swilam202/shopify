@@ -6,7 +6,7 @@ import '../../../../core/services/api/server exception.dart';
 import '../model/add remove cart model.dart';
 import 'package:http/http.dart' as http;
 abstract class BaseCartDataSource{
-  Future<AddRemoveCartModel> postAddRemoveCart(String productId);
+  Future<AddRemoveCartModel> postAddRemoveCart(int productId);
 
 }
 
@@ -14,7 +14,7 @@ abstract class BaseCartDataSource{
 class CartDataSource extends BaseCartDataSource{
   APIServices apiServices = APIServices();
   @override
-  Future<AddRemoveCartModel> postAddRemoveCart(String productId) async {
+  Future<AddRemoveCartModel> postAddRemoveCart(int productId) async {
     http.Response response = await apiServices.post(
       url: 'https://student.valuxapps.com/api/carts',
       body: {

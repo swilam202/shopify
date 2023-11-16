@@ -10,7 +10,7 @@ class CartRepository extends BaseCartRepository {
 
   @override
   Future<Either<Exception, AddRemoveCart>> postAddRemoveCart(
-      String productId) async {
+      int productId) async {
     AddRemoveCart addRemoveCart =
         await baseCartDataSource.postAddRemoveCart(productId);
     try {

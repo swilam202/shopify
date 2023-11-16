@@ -6,7 +6,7 @@ import '../entites/add remove cart.dart';
 class AddRemoveCartUseCase {
   BaseCartRepository baseCartRepository;
   AddRemoveCartUseCase(this.baseCartRepository);
-  Future<Either<Exception, AddRemoveCart>> excute(String productId) async {
+  Future<Either<Exception, AddRemoveCart>> excute(int productId) async {
     return await baseCartRepository.postAddRemoveCart(productId);
   }
 }
