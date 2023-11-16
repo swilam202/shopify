@@ -11,7 +11,7 @@ import 'package:http/http.dart' as http;
 abstract class BaseCartDataSource{
   Future<AddRemoveCartModel> postAddRemoveCart(int productId);
   Future<CartModel> getCart();
-  Future<UpdateCart> updateCart(int quantiny);
+  Future<UpdateCart> updateCart(int quantity,int id);
 
 }
 
@@ -58,18 +58,19 @@ if (response.statusCode == 200) {
   }
   
   @override
-  Future<UpdateCart> updateCart(int quantiny) async {
+  Future<UpdateCart> updateCart(int quantity,int id) async {
     http.Response response = await apiServices.put(
-      url: 'https://student.valuxapps.com/api/carts/$quantiny',
+      url: 'https://student.valuxapps.com/api/carts/$id',
       body: {
-        "product_id": quantiny,
+        "quantity": quantity,
       },
     );
 
     if (response.statusCode == 200) {
       UpdateCartModel model = UpdateCartModel.fromJson(jsonDecode(response.body));
 
-
+      print('++++++++++++++++++++++++++++++++++++++++++++++');
+      print(model.messaga);
       return model;
 
     } else {

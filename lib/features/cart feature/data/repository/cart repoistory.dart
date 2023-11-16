@@ -38,9 +38,9 @@ class CartRepository extends BaseCartRepository {
   }
 
   @override
-  Future<Either<Exception, UpdateCart>> updateCart(int quantiny) async {
+  Future<Either<Exception, UpdateCart>> updateCart(int quantity,int id) async {
     var updateCartModel =
-        await baseCartDataSource.updateCart(quantiny);
+        await baseCartDataSource.updateCart( quantity, id);
     try {
       return Right(updateCartModel);
     } on ServerException catch (e) {

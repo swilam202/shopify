@@ -66,13 +66,13 @@ class _HomePageTrendingSectionState extends State<HomePageTrendingSection> {
                     decoration: BoxDecoration(
                       color:  StyleColor.whiteColor,
                       borderRadius: BorderRadius.circular(16),
-                      boxShadow: [
+                     /* boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
                           blurRadius: 0.5,
                           offset: const Offset(2, 1),
                         ),
-                      ],
+                      ],*/
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,

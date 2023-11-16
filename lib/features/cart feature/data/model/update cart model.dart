@@ -9,7 +9,7 @@ class UpdateCartModel extends UpdateCart {
   factory UpdateCartModel.fromJson(Map<String, dynamic> json) {
     return UpdateCartModel(
       status: json['status'],
-      messaga: json['messaga'],
+      messaga: json['message'],
     );
   }
 }
