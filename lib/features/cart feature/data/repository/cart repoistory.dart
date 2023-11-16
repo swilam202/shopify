@@ -2,8 +2,10 @@ import 'package:dartz/dartz.dart';
 import 'package:hhhhhhhh/core/services/api/server%20exception.dart';
 import 'package:hhhhhhhh/features/cart%20feature/data/data%20source/base%20cart%20data%20source.dart';
 import 'package:hhhhhhhh/features/cart%20feature/data/model/add%20remove%20cart%20model.dart';
+import 'package:hhhhhhhh/features/cart%20feature/data/model/address%20model.dart';
 import 'package:hhhhhhhh/features/cart%20feature/data/model/cart%20model.dart';
 import 'package:hhhhhhhh/features/cart%20feature/domain/entites/add%20remove%20cart.dart';
+import 'package:hhhhhhhh/features/cart%20feature/domain/entites/address.dart';
 import 'package:hhhhhhhh/features/cart%20feature/domain/entites/cart.dart';
 import 'package:hhhhhhhh/features/cart%20feature/domain/entites/update%20cart.dart';
 import 'package:hhhhhhhh/features/cart%20feature/domain/repository/base%20cart%20repoistory.dart';
@@ -39,10 +41,21 @@ class CartRepository extends BaseCartRepository {
 
   @override
   Future<Either<Exception, UpdateCart>> updateCart(int quantity,int id) async {
-    var updateCartModel =
+    UpdateCartModel updateCartModel =
         await baseCartDataSource.updateCart( quantity, id);
     try {
       return Right(updateCartModel);
+    } on ServerException catch (e) {
+      return Left(e);
+    }
+  }
+
+  @override
+  Future<Either<Exception, Address>> getAddress() async{
+    AddressModel addressModel =  await baseCartDataSource.getAddress();
+
+    try {
+      return Right(addressModel);
     } on ServerException catch (e) {
       return Left(e);
     }

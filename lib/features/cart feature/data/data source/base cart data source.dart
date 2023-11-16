@@ -1,6 +1,8 @@
 import 'dart:convert';
 
+import 'package:dartz/dartz.dart';
 import 'package:hhhhhhhh/core/services/api/api%20services.dart';
+import 'package:hhhhhhhh/features/cart%20feature/data/model/address%20model.dart';
 import 'package:hhhhhhhh/features/cart%20feature/data/model/cart%20model.dart';
 import 'package:hhhhhhhh/features/cart%20feature/data/model/update%20cart%20model.dart';
 import 'package:hhhhhhhh/features/cart%20feature/domain/entites/update%20cart.dart';
@@ -11,7 +13,8 @@ import 'package:http/http.dart' as http;
 abstract class BaseCartDataSource{
   Future<AddRemoveCartModel> postAddRemoveCart(int productId);
   Future<CartModel> getCart();
-  Future<UpdateCart> updateCart(int quantity,int id);
+  Future< AddressModel> getAddress();
+  Future<UpdateCartModel> updateCart(int quantity,int id);
 
 }
 
@@ -59,7 +62,7 @@ if (response.statusCode == 200) {
   }
   
   @override
-  Future<UpdateCart> updateCart(int quantity,int id) async {
+  Future<UpdateCartModel> updateCart(int quantity,int id) async {
     http.Response response = await apiServices.put(
       url: 'https://student.valuxapps.com/api/carts/$id',
       body: {
@@ -76,6 +79,25 @@ if (response.statusCode == 200) {
     } else {
       throw ServerException(jsonDecode(response.body));
     }
+  }
+
+  @override
+  Future< AddressModel> getAddress() async{
+    http.Response response = await apiServices.get(
+      url: 'https://student.valuxapps.com/api/addresses',
+    );
+
+
+    if (response.statusCode == 200) {
+      AddressModel model = AddressModel.fromJson(jsonDecode(response.body)['data']['data'][0],);
+
+
+      return model;
+
+    } else {
+      throw ServerException(jsonDecode(response.body));
+    }
+
   }
 
 }

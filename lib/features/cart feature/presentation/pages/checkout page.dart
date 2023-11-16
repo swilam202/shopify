@@ -28,7 +28,7 @@ class CheckoutPage extends StatelessWidget {
               SizedBox(height: 18),
               CustomDivider(),
               Spacer(),
-              CartBottomSection(buttonText: 'Place Order'),
+              CartBottomSection(buttonText: 'Place Order',total: 22.0),
               SizedBox(height: 18),
             ],
           ),

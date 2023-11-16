@@ -34,11 +34,11 @@ class CartPage extends StatelessWidget {
               ),
               SizedBox(height: 18),
               Expanded(
-                child: CartListView(data: state.cart.data!,),
+                child: CartListView(data: state.cart.data!),
               ),
               SizedBox(height: 18),
               CustomDivider(),
-              CartBottomSection(buttonText: 'Checkout',),
+              CartBottomSection(buttonText: 'Checkout',total: state.cart.total!),
             ],
           );
               }
