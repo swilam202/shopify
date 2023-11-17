@@ -19,7 +19,7 @@ class ProductDetailsDataSource extends BaseProductDetailsDataSource{
     http.Response response = await apiServices.get(
         url: 'https://student.valuxapps.com/api/products/$id');
     if (response.statusCode == 200) {
-      ProductDetailsModel productsModel = (jsonDecode(response.body)['data']);
+      ProductDetailsModel productsModel = ProductDetailsModel.fromJson(jsonDecode(response.body)['data']);
 
       return productsModel;
     } else {

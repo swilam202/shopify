@@ -7,7 +7,7 @@ class ProductDetails {
   final num discount;
   final String name;
   final String description;
-  final List<String> images;
+  final List images;
 
   ProductDetails({
     required this.id,
